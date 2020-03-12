@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col col-12 col-xl-12">
+                <form class="jumbotron" name="myForm" action="#" id="form" onsubmit="return validateForm()" method="get">
+                    <table class="table">
+                        <h3 style="text-align: center; color: blueviolet;"><b>APPLICATION FORM</b></h3>
+                        <tr>
+                            <td>NAME</td>
+                            <td><input type="text" class="form-control" name="fname"></td>
+                        </tr>
+                        <tr>
+                            <td>ADDRESS</td>
+                            <td><textarea id="add" cols="50" rows="5" class="form-control" name="faddress"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>E-MAIL</td>
+                            <td><input type="text" class="form-control" name="femail"></td>
+                        </tr>
+                        <tr>
+                            <td>DOB</td>
+                            <td><input type="date" class="form-control" name="fdate"></td>
+                        </tr>
+                        <tr>
+                            <td>USERNAME</td>
+                            <td><input type="text" class="form-control"name="fuser"></td>
+                        </tr>
+                        <tr>
+                            <td>PASSWORD</td>
+                            <td><input type="password" class="form-control" id="p" name="fp"></td>
+                        </tr>
+                        <tr>
+                            <td>CONFIRM PASSWORD</td>
+                            <td><input type="password" class="form-control" id="cp" name="fcp"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><button type="submit" class="btn btn-success">REGISTER</button></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function validateForm()
+        {
+            var x = document.forms["myForm"]["fname"].value;
+            if (x == "")
+                {
+                alert("Name must be filled out");
+                 return false;
+                }
+
+            var y = document.forms["myForm"]["faddress"].value;
+            if (y == "")
+                {
+                alert("address must be filled out");
+                 return false;
+                }
+
+            var z = document.forms["myForm"]["femail"].value;
+            if (z == "")
+                {
+                alert("email must be filled out");
+                 return false;
+                } 
+
+            var a = document.forms["myForm"]["fdate"].value; 
+            if (a == "")
+                {
+                alert("DOB must be filled out");
+                 return false;
+                }
+
+            var b = document.forms["myForm"]["fuser"].value;
+            if (b == "")
+                {
+                alert("username must be filled out");
+                 return false;
+                }  
+
+            var c = document.forms["myForm"]["fp"].value;
+            if (c == "")
+                {
+                alert("password must be filled out");
+                 return false;
+                }  
+
+            var d = document.forms["myForm"]["fcp"].value;
+            if (d == "")
+                {
+                alert("confirm password must be filled out");
+                 return false;
+                } 
+
+            if(c!==d)
+                {
+                 alert("confirm password must be same as password");
+                 return false;
+                }
+
+           if(p.length<=8)
+                {
+                alert("password must contain atleast 8 characters");
+                 return false;
+                }  
+            
+        };
+    </script>
+    </body>
+</html>
